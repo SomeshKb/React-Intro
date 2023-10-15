@@ -15,3 +15,48 @@ p {
   height: 100px;
   background: red;
 }
+
+.post-container {
+  width: 75%;
+  display: flex;
+  margin: 10px auto;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #dadada;
+  padding: 10px;
+}
+
+.post-title {
+  font-weight: 700;
+  font-size: 30px;
+  margin-bottom: 10px;
+}
+
+.comment-wrapper {
+  margin-top: 20px;
+}
+
+.comment-header {
+  font-weight: 600;
+  font-size: 20px;
+}
+
+.post-body {
+  font-size: 20px;
+  /* min-height: 80vh; */
+}
+
+.comment-items {
+  padding: 10px;
+  margin: 10px auto;
+  border: 1px solid #dadada;
+  border-radius: 10px;
+}
+
+.comment-autor-name {
+  font-weight: 600;
+}
+
+.comment-body {
+}

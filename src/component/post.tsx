@@ -5,9 +5,18 @@ import { useParams } from 'react-router-dom';
 
 export default function Post() {
   const [post, setPost] = useState(null);
+  const [comments, setComments] = useState([]);
   const { postId } = useParams();
 
   useEffect(() => {
+    getPostDetails();
+  }, []);
+
+  useEffect(() => {
+    getPostComments();
+  }, []);
+
+  const getPostDetails = () => {
     fetch(`https://jsonplaceholder.typicode.com/posts/${postId}`)
       .then((response) => response.json())
       .then((data) => {
@@ -17,12 +26,33 @@ export default function Post() {
       .catch((err) => {
         console.log(err.message);
       });
-  }, []);
+  };
+
+  const getPostComments = () => {
+    fetch(`https://jsonplaceholder.typicode.com/posts/${postId}/comments`)
+      .then((response) => response.json())
+      .then((data) => {
+        setComments(data);
+      })
+      .catch((err) => {
+        console.log(err.message);
+      });
+  };
 
   return (
-    <div>
-      <div>{post?.title}</div>
-      <div>{post?.body}</div>
+    <div className="post-container">
+      <div className="post-title">{post?.title}</div>
+      <div className="post-body">{post?.body}</div>
+
+      <div className="comment-wrapper">
+        <span className="comment-header">Comments</span>
+        {comments.map((item, index) => (
+          <div key={index} className="comment-items">
+            <div className="comment-autor-name"> {item.name} </div>
+            <div className="comment-body"> {item.body} </div>
+          </div>
+        ))}
+      </div>
     </div>
   );
 }
