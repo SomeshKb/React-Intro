@@ -16,15 +16,24 @@ p {
   background: red;
 }
 
-.post-container {
+.post-details {
   width: 75%;
+  display: flex;
+  margin: 10px auto;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid #dadada;
+  padding: 10px;
+  min-height: 90vh;
+}
+
+.post-container {
   display: flex;
   margin: 10px auto;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  border: 1px solid #dadada;
-  padding: 10px;
 }
 
 .post-title {
