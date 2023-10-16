@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { useEffect, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
+import Header from './header';
 
 export default function PostList() {
   const [limit, setLimit] = useState(10);
@@ -34,6 +35,8 @@ export default function PostList() {
 
   return (
     <div>
+      {/* <input onChange /> */}
+      <Header></Header>
       <button onClick={onCreatePostClicked}>Create Post</button>
 
       <select onChange={onLimitChange}>
@@ -44,7 +47,9 @@ export default function PostList() {
       <div className="posts-wrapper">
         {post.map((item, index) => (
           <div key={index} className="post-items">
-            <Link to={`/post/${item.id}`}>{item.title}</Link>
+            <Link className="post-item-text" to={`/post/${item.id}`}>
+              {item.title}
+            </Link>
           </div>
         ))}
       </div>

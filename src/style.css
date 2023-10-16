@@ -13,7 +13,13 @@ p {
 
 .post-items {
   height: 100px;
-  background: red;
+  background: #fafafa;
+  padding: 10px;
+}
+
+.post-item-text {
+  text-decoration: none;
+  color: white;
 }
 
 .post-details {
