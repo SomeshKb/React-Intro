@@ -3,6 +3,10 @@ p {
   font-family: Lato;
 }
 
+body {
+  background: #e3a7ff;
+}
+
 .posts-wrapper {
   display: grid;
   justify-content: space-evenly;
@@ -13,13 +17,14 @@ p {
 
 .post-items {
   height: 100px;
-  background: #fafafa;
+  background: #fcfcfc;
   padding: 10px;
+  border-radius: 4px;
 }
 
 .post-item-text {
   text-decoration: none;
-  color: white;
+  color: #b84ceb;
 }
 
 .post-details {

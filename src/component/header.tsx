@@ -1,17 +1,14 @@
-import * as React from 'react';
 import { useState } from 'react';
+import * as React from 'react';
 
-export default function Header() {
-  const [searchText, setSearchText] = useState('');
-
-  const detectTextChange = (event) => {
-    console.log(event.target.value);
-    setSearchText(event.target.value);
-  };
-
+export default function Header({ onSearch }) {
   return (
     <div>
-      <input type="text" onChange={detectTextChange} />
+      <input
+        type="text"
+        placeholder="Search..."
+        onChange={(e) => onSearch(e.target.value)}
+      />
     </div>
   );
 }
