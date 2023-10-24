@@ -15,7 +15,12 @@ export default function PostList(props) {
       .then((response) => response.json())
       .then((data) => {
         setPosts(data);
-        setFilteredPosts(data);
+
+        if (props.search) {
+          filterPosts(props.search);
+        } else {
+          setFilteredPosts(data);
+        }
       })
       .catch((err) => {
         console.log(err.message);
@@ -51,20 +56,19 @@ export default function PostList(props) {
 
   return (
     <div>
-      {/* <input onChange /> */}
-      <button onClick={onCreatePostClicked}>Create Post</button>
-      <select onChange={onLimitChange}>
-        <option value="10">10</option>
-        <option value="50">50</option>
-        <option value="100">100</option>
-      </select>
+      <div className="post-list-action">
+        <button onClick={onCreatePostClicked}>Create Post</button>
+        <select onChange={onLimitChange}>
+          <option value="10">10</option>
+          <option value="50">50</option>
+          <option value="100">100</option>
+        </select>
+      </div>
       <div className="posts-wrapper">
         {filteredPosts.map((item, index) => (
-          <div key={index} className="post-items">
-            <Link className="post-item-text" to={`/post/${item.id}`}>
-              {item.title}
-            </Link>
-          </div>
+          <Link to={`/post/${item.id}`} key={index} className="post-items">
+            <span className="post-item-text">{item.title}</span>
+          </Link>
         ))}
       </div>
     </div>

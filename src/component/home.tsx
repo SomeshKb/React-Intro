@@ -9,7 +9,7 @@ export default function Home() {
   return (
     <div>
       <Header onSearch={setSearchTerm}></Header>
-      <PostList search={searchTerm}></PostList>;
+      <PostList search={searchTerm}></PostList>
     </div>
   );
 }

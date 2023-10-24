@@ -20,6 +20,7 @@ body {
   background: #fcfcfc;
   padding: 10px;
   border-radius: 4px;
+  text-decoration: none;
 }
 
 .post-item-text {
@@ -79,4 +80,31 @@ body {
 }
 
 .comment-body {
+}
+
+.search-container {
+  display: flex;
+  justify-content: center;
+}
+
+.search-input {
+  padding: 8px 10px;
+  border: none;
+  border-radius: 5px;
+  width: 40%;
+  outline: none;
+}
+
+.post-list-action {
+  display: flex;
+  justify-content: end;
+  margin: 10px;
+}
+
+.post-list-action > select {
+  padding: 3px 6px;
+  border: none;
+  border-radius: 5px;
+  margin-left: 5px;
+  outline: none;
 }
